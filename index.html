@@ -1,0 +1,269 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="reveal.js/css/reveal.css">
+    <link rel="stylesheet" href="reveal.js/css/theme/black.css">
+
+    <title>MFE - SemDev2020</title>
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <section>
+                <h2>
+                    Séminaire dev Insee 2020
+                </h2>
+                <br />
+                <h1>
+                    VTL
+                </h1>
+                <br />
+                <br />
+                <div>
+                    <p><i>Laurent Caouissin</i></p>
+                    <p>
+                        <cite>
+                            <a href="https://laurentC35.github.io/Micro-Frontend-Sem-Dev-2020">https://github.com/laurentC35/Micro-Frontend-Sem-Dev-2020</a>
+                        </cite>
+                    </p>
+                </div>
+            </section>
+            <section>
+                <section>
+                    <h2>
+                        Validation<br />and<br />Transformation<br />Language
+                    </h2>
+                    <br />
+                    <p>
+                        “technology-neutral” language
+                    </p>
+                </section>
+                <section>
+                    <h2>
+                        Pourquoi VTL ?
+                    </h2>
+                    <br />
+                    <ul>
+                        <li>
+                            Permettre une définition formelle et standard de traitements de validation de données statistiques et de calcul de données dérivées
+                        </li>
+                        <li>
+                            Donner un vue métier indépendante des langages de programmation
+                        </li>
+                        <li>
+                            Orienté utilisateur
+                        </li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>
+                        Spécifications
+                    </h2>
+                    <br />
+                    <ul>
+                        <li>
+                            <a href="https://sdmx.org/wp-content/uploads/VTL-2.0-User-Manual-20180416-final.pdf">Guide utilisateur</a>
+                        </li>
+                        <li>
+                            <a href="https://sdmx.org/wp-content/uploads/VTL-2.0-Reference-Manual-20180712-final.pdf">Guide de référence</a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/InseeFr/VTL-Tools/blob/master/vtl-sources/Vtl-2.0/Vtl.g4">Grammaire formelle (EBNF)</a>
+                        </li>
+                    </ul>
+                    <br />
+                    <br />
+                    <br />
+                    <h2>
+                        TODO :
+                    </h2>
+                    <p>
+                        Implémenter le niveau technique
+                    </p>
+                </section>
+                <section>
+                    <h2>
+                        Évolutions de VTL
+                    </h2>
+                    <img src="img/vtl-story.png" alt="vtl-story" height="500"/>
+                </section>
+                <section>
+                    <h2>
+                        Contexte de collaboration internationale
+                    </h2>
+                    <br />
+                    <ul>
+                        <li>Eurostat</li>
+                        <li>INS : SSB (Norvège), Istat (Italie)</li>
+                        <li>Banques : Banque d'Italie, BCE</li>
+                        <li>Autres : Bureau international du travail</li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>
+                        ESSnet<br /><br />Implementing Shared Statistical Services
+                    </h2>
+                    <img src="img/i3s.jpg" alt="i3s" height="300"/>
+                </section>
+            </section>
+            <section>
+                <section>
+                    <h2>
+                        VTL à l'Insee
+                    </h2>
+                </section>
+                <section>
+                    <ul>
+                        <li>
+                            <a href="https://github.com/InseeFr/VTL-Tools">VTL Tools</a> (JS)
+                        </li>
+                        <li>
+                            <a href="https://github.com/InseeFr/Trevas">Trevas</a> (Java)
+                        </li>
+                        <li>
+                            <a href="https://github.com/romaintailhurat/darkr">DarkR</a> (R)
+                        </li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>VTL Tools</h2>
+                    <br />
+                    <ul>
+                        <li>
+                            Moteur de validation :
+                            <ul>
+                                <li>
+                                    <a href="https://inseefr.github.io/VTL-Tools/fr/coverage.html">couverture</a>
+                                </li>
+                                <li>
+                                    <a href="https://inseefr.github.io/Lunatic/editor/">exemple</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            Éditeur
+                        </li>
+                    </ul>
+                    <br />
+                    <br />
+                    <br />
+                    <p>Disponible sur npm</p>
+                </section>
+                <section>
+                    <h2>
+                        Trevas
+                    </h2>
+                    <br />
+                    <ul>
+                        <li>
+                            Engine JSR 223 - <a href="https://inseefr.github.io/Trevas/fr/coverage.html">couverture</a>
+                        </li>
+                        <li>
+                            Modules Java 11
+                        </li>
+                        <li>
+                            Datasets : InMemory & Spark
+                        </li>
+                    </ul>
+                    <br />
+                    <br />
+                    <br />
+                    <p>Bientôt disponible sur Maven</p>
+                </section>
+                <section>
+                    <h2>
+                        Trevas - Cas d'utilisation
+                    </h2>
+                    <br />
+                    <ul>
+                        <li>
+                            Crabe
+                        </li>
+                        <li>
+                            Aval des enquêtes Ménages
+                        </li>
+                        <li>
+                            SI revenus
+                        </li>
+                        <li>
+                            ARC
+                        </li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>
+                        DarkR
+                    </h2>
+                    <br />
+                    <p>
+                        Wrapper R de Trevas
+                    </p>
+                </section>
+            </section>
+            <section>
+                <section>
+                    <h2>Démos</h2>
+                </section>
+                <section>
+                    <h2>Crabe</h2>
+                </section>
+                <section>
+                    <h2>Aval des enquêtes</h2>
+                </section>
+            </section>
+            <section>
+                <h2>
+                    Roadmap
+                </h2>
+                <br />
+                <ul>
+                    <li>
+                        Augmenter la couverture de Trevas (InMemory)
+                    </li>
+                    <li>
+                        Continuer l'intégration de Spark dans Trevas
+                    </li>
+                    <li>
+                        Contribuer à l'éditeur Eurostat
+                    </li>
+                </ul>
+            </section>
+            <section>
+                <h2>
+                    Conclusion
+                </h2>
+                <br />
+                <p>VTL c'est notamment :</p>
+                <br />
+                <ul>
+                    <li>
+                        L'interopérabilité
+                    </li>
+                    <li>
+                        La rationalisation
+                    </li>
+                    <li>
+                        Donner la main au statisticien pour décrire ses opérations et les faire exécuter automatiquement
+                    </li>
+                </ul>
+            </section>
+            <section>
+                <h2>Merci</h2>
+                <br />
+                <br />
+                <br />
+                <h2>Questions ?</h2>
+            </section>
+        </div>
+    </div>
+    <script src="reveal.js/js/reveal.js"></script>
+    <script>
+        Reveal.initialize({
+            hash: true,
+            transition: 'slide',
+        });
+    </script>
+</body>
+
+</html>
