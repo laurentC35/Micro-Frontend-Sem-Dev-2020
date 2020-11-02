@@ -2,7 +2,7 @@
 
 <head>
     <link rel="stylesheet" href="reveal.js/dist/reveal.css">
-    <link rel="stylesheet" href="reveal.js/dist/theme/black.css">
+    <link rel="stylesheet" href="reveal.js/dist/theme/solarized.css">
 
     <title>MFE - SemDev2020</title>
 </head>
@@ -16,7 +16,7 @@
                 </h2>
                 <br />
                 <h1>
-                    VTL
+                    Micro-frontend
                 </h1>
                 <br />
                 <br />
@@ -32,224 +32,137 @@
             <section>
                 <section>
                     <h2>
-                        Validation<br />and<br />Transformation<br />Language
+                        Micro-frontend
+                    </h2>
+                    <br />
+                    <h3>
+                        techniques de découpage d'application JS
+                    </h3>
+                </section>
+                <section>
+                    <h2>
+                        Qu'est ce que c'est ?
                     </h2>
                     <br />
                     <p>
-                        “technology-neutral” language
+                        <b>Les Micro-Frontends reprennent le concept d'architecture des micro-services, et l'applique au développement frontal.</b>
                     </p>
                 </section>
                 <section>
-                    <h2>
-                        Pourquoi VTL ?
-                    </h2>
-                    <br />
+                    <h3>Pourquoi faire ?</h3>
                     <ul>
-                        <li>
-                            Permettre une définition formelle et standard de traitements de validation de données statistiques et de calcul de données dérivées
-                        </li>
-                        <li>
-                            Donner un vue métier indépendante des langages de programmation
-                        </li>
-                        <li>
-                            Orienté utilisateur
-                        </li>
+                        <li>Applications monolithes : difficiles à gérer, maintenir ou moderniser</li>
+                        <li>Trouver un moyen de réduire les coûts</li>
+                        <li>Les micro-services sont nés dans les "back-office"</li>
+                        <li>Les "front-office" reste des monolithes</li>
+                    </ul>
+                    <h4>=> Création des micro-frontend</h4>
+                </section>
+                <section>
+                    <h3>Principes</h3>
+                    <ul>
+                        <li>Concept architectural</li>
+                        <li>Pas de cadre/norme ou d'APIs définis</li>
+                        <li>Une seule régle : diviser l'application en plusieurs, chacune ayant son dépôt, centrés sur un lot de fonctionnalités</li>
+                    </ul>
+                </section>                
+                <section>
+                    <h4>Pour l'utilisateur final : une seule application</h4>
+                    <img src="img/deployment.png">
+                </section>
+                <section>
+                    <h3>Au niveau de l'UI</h3>
+                    <img src="img/ui.png">
+                </section>
+                <section>
+                    <h3>Quels sont les avantages de découper ?</h3>
+                    <ul>
+                        <li>Séparation des équipes de développement 👍</li>
+                        <li>Séparation des cycles de vies des applications 👍</li>
+                        <li>Choix des versions des frameworks frontend libres pour chacune des sous-appliaction : React, Angular, VueJs 👍</li>
+                    </ul>
+                </section>
+                
+            </section>
+            <section>
+                <section>
+                    <h2>Concrêtement : comment ça marche ?</h2>
+                    <h4>Plusieurs possibilités avec les téchnologie web actuelles</h4>
+                    <ul>
+                        <li>iframe  🤮</li>
+                        <li>Routage serveur</li>
+                        <li>Intégration au build 😉</li>
+                        <li>Intégration au runtime 🥰</li>
                     </ul>
                 </section>
                 <section>
-                    <h2>
-                        Spécifications
-                    </h2>
-                    <br />
-                    <ul>
-                        <li>
-                            <a href="https://sdmx.org/wp-content/uploads/VTL-2.0-User-Manual-20180416-final.pdf">Guide utilisateur</a>
-                        </li>
-                        <li>
-                            <a href="https://sdmx.org/wp-content/uploads/VTL-2.0-Reference-Manual-20180712-final.pdf">Guide de référence</a>
-                        </li>
-                        <li>
-                            <a href="https://github.com/InseeFr/VTL-Tools/blob/master/vtl-sources/Vtl-2.0/Vtl.g4">Grammaire formelle (EBNF)</a>
-                        </li>
-                    </ul>
-                    <br />
-                    <br />
-                    <br />
-                    <h2>
-                        TODO :
-                    </h2>
-                    <p>
-                        Implémenter le niveau technique
-                    </p>
+                    
                 </section>
+            </section>
+            
+            <section>
                 <section>
-                    <h2>
-                        Évolutions de VTL
-                    </h2>
-                    <img src="img/vtl-story.png" alt="vtl-story" height="500"/>
-                </section>
-                <section>
-                    <h2>
-                        Contexte de collaboration internationale
-                    </h2>
-                    <br />
-                    <ul>
-                        <li>Eurostat</li>
-                        <li>INS : SSB (Norvège), Istat (Italie)</li>
-                        <li>Banques : Banque d'Italie, BCE</li>
-                        <li>Autres : Bureau international du travail</li>
-                    </ul>
-                </section>
-                <section>
-                    <h2>
-                        ESSnet<br /><br />Implementing Shared Statistical Services
-                    </h2>
-                    <img src="img/i3s.jpg" alt="i3s" height="300"/>
+                    <h2>Petite démo</h2>
                 </section>
             </section>
             <section>
                 <section>
-                    <h2>
-                        VTL à l'Insee
-                    </h2>
+                    <h2>Besoins Metallica</h2>
+                    <h4>Poste de collecte enquêteur</h4>
                 </section>
                 <section>
+                    <h2>2 besoins principaux</h2>
+                    <ol>
+                        <li>Organiser la collecte</li>
+                        <li>Collecter de la données définies via les métadonnées</li>
+                    </ol>
+                </section>
+                <section>
+                    <h3>1. Organiser la collecte</h3>
                     <ul>
-                        <li>
-                            <a href="https://github.com/InseeFr/VTL-Tools">VTL Tools</a> (JS)
-                        </li>
-                        <li>
-                            <a href="https://github.com/InseeFr/Trevas">Trevas</a> (Java)
-                        </li>
-                        <li>
-                            <a href="https://github.com/romaintailhurat/darkr">DarkR</a> (R)
-                        </li>
+                        <li>Application de gestion</li>
+                        <li>Adhérent à l'organisation de l'Insee</li>
+                        <li>(cycle de vie des unitées enquêtées, ...)</li>
                     </ul>
                 </section>
                 <section>
-                    <h2>VTL Tools</h2>
-                    <br />
+                    <h3>2. Collecter de la données</h3>
                     <ul>
-                        <li>
-                            Moteur de validation :
-                            <ul>
-                                <li>
-                                    <a href="https://inseefr.github.io/VTL-Tools/fr/coverage.html">couverture</a>
-                                </li>
-                                <li>
-                                    <a href="https://inseefr.github.io/Lunatic/editor/">exemple</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            Éditeur
-                        </li>
-                    </ul>
-                    <br />
-                    <br />
-                    <br />
-                    <p>Disponible sur npm</p>
-                </section>
-                <section>
-                    <h2>
-                        Trevas
-                    </h2>
-                    <br />
-                    <ul>
-                        <li>
-                            Engine JSR 223 - <a href="https://inseefr.github.io/Trevas/fr/coverage.html">couverture</a>
-                        </li>
-                        <li>
-                            Modules Java 11
-                        </li>
-                        <li>
-                            Datasets : InMemory & Spark
-                        </li>
-                    </ul>
-                    <br />
-                    <br />
-                    <br />
-                    <p>Bientôt disponible sur Maven</p>
-                </section>
-                <section>
-                    <h2>
-                        Trevas - Cas d'utilisation
-                    </h2>
-                    <br />
-                    <ul>
-                        <li>
-                            Crabe
-                        </li>
-                        <li>
-                            Aval des enquêtes Ménages
-                        </li>
-                        <li>
-                            SI revenus
-                        </li>
-                        <li>
-                            ARC
-                        </li>
+                        <li>Application générique (définies via les métadonnées)</li>
+                        <li>Adhérent à la librairie de composants Lunatic</li>
+                        <li>Instancie des questionnaires</li>
+                        <li>Application réutilisable (Pogues visualisation, contrôle qualité (relecture des données collectées par des agents en bureau))</li>
                     </ul>
                 </section>
                 <section>
-                    <h2>
-                        DarkR
-                    </h2>
+                    <h3>Bilan</h3>
+                    <p>On découpe le poste de collecte enquêteur en 2 applications</p>
+                    <p><b>Cela permet en plus:</b></p>
+                    <ul>
+                        <li>D'avoir des cycles de vies d'application différentes</li>
+                        <li>Equipe de développement/maintenance séparées</li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>Démonstration en l'état</h2>
+                    <a href="https://collecte-enqueteurs.enquetes.recette2.insee.fr" target="_blank">Pearl</a> <br/>
+                    <a href="https://questionnaire-enqueteurs.enquetes.recette2.insee.fr" target="_blank">Queen</a>
                     <br />
-                    <p>
-                        Wrapper R de Trevas
-                    </p>
+                    <p><b>Sur le cloud :</b></p>
+                    <p>Pearl : <a href="https://pearl.demo.dev.sspcloud.fr">https://pearl.demo.dev.sspcloud.fr</a> <br/>
+                       Queen : <a href="https://queen.demo.dev.sspcloud.fr">https://queen.demo.dev.sspcloud.fr</a></p>
                 </section>
             </section>
             <section>
-                <section>
-                    <h2>Démos</h2>
-                </section>
-                <section>
-                    <h2>Crabe</h2>
-                </section>
-                <section>
-                    <h2>Aval des enquêtes</h2>
-                </section>
-            </section>
-            <section>
-                <h2>
-                    Roadmap
-                </h2>
-                <br />
+                <h2>Source</h2>
                 <ul>
-                    <li>
-                        Augmenter la couverture de Trevas (InMemory)
-                    </li>
-                    <li>
-                        Continuer l'intégration de Spark dans Trevas
-                    </li>
-                    <li>
-                        Contribuer à l'éditeur Eurostat
-                    </li>
+                    <li><a href="https://dev.to/phodal/micro-frontend-architecture-in-action-4n60">6 implementations possibles de microFrontend</a></li>
+                    <li><a href="https://medium.com/javascript-in-plain-english/create-micro-frontends-using-web-components-with-support-for-angular-and-react-2d6db18f557a">Exemple React / angular</a></li>
+                    <li><a href="https://medium.com/stepstone-tech/microfrontends-part-2-integration-and-communication-3385bc242673">Communications inter micro-frontent</a></li>
                 </ul>
             </section>
             <section>
-                <h2>
-                    Conclusion
-                </h2>
-                <br />
-                <p>VTL c'est notamment :</p>
-                <br />
-                <ul>
-                    <li>
-                        L'interopérabilité
-                    </li>
-                    <li>
-                        La rationalisation
-                    </li>
-                    <li>
-                        Donner la main au statisticien pour décrire ses opérations et les faire exécuter automatiquement
-                    </li>
-                </ul>
-            </section>
-            <section>
-                <h2>Merci</h2>
+                <h2>Merci de votre attention</h2>
                 <br />
                 <br />
                 <br />
