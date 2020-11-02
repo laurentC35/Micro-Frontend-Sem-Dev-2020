@@ -3,6 +3,7 @@
 <head>
     <link rel="stylesheet" href="reveal.js/dist/reveal.css">
     <link rel="stylesheet" href="reveal.js/dist/theme/solarized.css">
+    <link rel="stylesheet" href="reveal.js/plugin/highlight/monokai.css">
 
     <title>MFE - SemDev2020</title>
 </head>
@@ -87,7 +88,7 @@
             <section>
                 <section>
                     <h2>Concrêtement : comment ça marche ?</h2>
-                    <h4>Plusieurs possibilités avec les téchnologie web actuelles</h4>
+                    <h4>Plusieurs possibilités avec les téchnologies web actuelles</h4>
                     <ul>
                         <li>iframe  🤮</li>
                         <li>Routage serveur</li>
@@ -96,13 +97,50 @@
                     </ul>
                 </section>
                 <section>
-                    
+                    <h2>Les Web Components & le Shadow Dom</h2>
+                    <h5>Intégration au runtime</h5>
+                    <i><b>"The Dom is the API"</b></i>
                 </section>
-            </section>
-            
-            <section>
                 <section>
-                    <h2>Petite démo</h2>
+                    <b>Norme W3C</b>
+                    <i>"Les Composants Web sont constitués de plusieurs technologies distinctes permettant de créer des composants d'interface graphique personnalisés et réutilisables, qui ont été créés en utilisant des technologies web libres."</i>
+                </section>
+                <section>
+                    <b>Pour définir le web composant : </b>
+                    <pre><code data-trim>
+                        class MyNewComponent extends HTMLElement {
+                          
+                            connectedCallback() {
+                                this.innerHTML = <div>My new webComponent</div>
+                            }
+                          
+                            disconnectedCallback() { ... }
+
+                          }
+                          
+                          window.customElements.define("my-new-webcomponent", MyNewComponent);
+                        }
+                    </code></pre>
+                    <b>Pour utiliser le web composant, il suffit d'ajouter le nouveau tag html</b>
+                    <pre><code data-trim>
+                        <my-new-webcomponent></my-new-webcomponent>
+                    </code></pre>
+                </section>
+                <section>
+                    <h2>Live coding : petite démo</h2>
+                </section>
+                <section>
+                    <h2>Le shadow Dom</h2>
+                    <p>Le shadow Dom permet d'encapsuler le JavaScript et le CSS des éléments HTML créés</p>
+                    <img src="img/shadow-dom.png">
+                </section>
+                <section>
+                    <h3>Shadow dom</h3>
+                    <ul>
+                        <li>Permet d'éviter les interférences entre les fichiers JavaScript</li>
+                        <li>Permet donc d'utiliser plusieurs frameworks (ou version de framework) au sein de la même application</li>
+                        <li>Permet d'éviter que les styles des uns écrase le style des autres</li>
+                    </ul>
                 </section>
             </section>
             <section>
@@ -171,10 +209,12 @@
         </div>
     </div>
     <script src="reveal.js/dist/reveal.js"></script>
+    <script src="reveal.js/plugin/highlight/highlight.js"></script>
     <script>
         Reveal.initialize({
             hash: true,
             transition: 'slide',
+            plugins: [ RevealHighlight ]
         });
     </script>
 </body>
