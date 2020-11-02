@@ -210,7 +210,17 @@
                 <section>
                     <h2>Rappel PWA</h2>
                     Les PWA sont des applications pouvant fonctionner hors ligne grâce aux service-worker.<br/>
-                    
+                    <br/> 
+                    Il "suffit" donc de combiner les service-worker des deux applications !
+                    <pre><code data-trim>
+                        /* Dans l'application principale */
+                        const swUrl = `${window.location.origin}/service-worker-custom.js?QUEEN_URL=${config.QUEEN_URL}`
+                        navigator.serviceWorker.register(swUrl)
+
+                        /* dans le service-worker-custom.js de l'application */                        
+                        self._QUEEN_URL = new URL(location).searchParams.get('QUEEN_URL');
+                        importScripts('/service-worker.js', `${self._QUEEN_URL}/queen-service-worker.js`);
+                    </code></pre>
                 </section>
                 
             </section>
