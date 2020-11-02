@@ -142,6 +142,26 @@
                         <li>Permet d'éviter que les styles des un écrasent le style des autres</li>
                     </ul>
                 </section>
+                <section>
+                    <h2>Communications :  The Dom is the API</h2>
+                    <ul>
+                        <li>via l'url</li>
+                        <li>via les attributs (cf: démo)</li>
+                        <li>via les évnènements javascript: utilisation de l'API <i>CustomEvent</i></li>
+                    </ul>
+                    <pre><code data-trim>
+                        /* Ecoute les évnènements de type 'myEvent' */
+                        element.addEventListener(
+                            'myEvent',
+                            (msg, data) => { /* ... */ }
+                          );
+
+                        /* Envoi un évnènement de type 'myCustomEvent' */
+                        element.dispatchEvent(
+                            new CustomEvent('myCustomEvent')
+                        );
+                    </code></pre>
+                </section>
             </section>
             <section>
                 <section>
@@ -178,7 +198,7 @@
                     <p><b>Cela permet en plus:</b></p>
                     <ul>
                         <li>D'avoir des cycles de vies d'application différentes</li>
-                        <li>Equipe de développement/maintenance séparées</li>
+                        <li>Equipes de développement/maintenance séparées</li>
                     </ul>
                 </section>
                 <section>
@@ -194,13 +214,13 @@
                     <img src="img/archi.png">
                 </section>
                 <section>
-                    <h2>Problématique</h2>
+                    <h2>Problématiques</h2>
                     <ul>
                         <li>L'authentification au sein des deux applications</li>
-                        <li>Communications entre les applications</li>
                         <li>Les CORS 😭</li>
                     </ul>
                 </section>
+                
             </section>
             <section>
                 <section>
