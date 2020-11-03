@@ -102,9 +102,13 @@
                     <i>"Les Composants Web sont constitués de plusieurs technologies distinctes permettant de créer des composants d'interface graphique personnalisés et réutilisables, qui ont été créés en utilisant des technologies web libres."</i>
                 </section>
                 <section>
-                    <b>Pour définir le web composant : </b>
+                    <b>Pour utiliser un web composant, il suffit d'ajouter son tag html dans la page html</b>
                     <pre><code data-trim>
-                        class MyNewComponent extends HTMLElement {
+                        <my-webcomponent></my-webcomponent>
+                    </code></pre>
+                    <b>Pour le définir, un peu de javascript : </b>
+                    <pre><code data-trim>
+                        class MyWebComponent extends HTMLElement {
                           
                             connectedCallback() {
                                 this.innerHTML = <div>My new webComponent</div>
@@ -114,32 +118,35 @@
 
                           }
                           
-                          window.customElements.define("my-new-webcomponent", MyNewComponent);
+                          window.customElements.define("my-webcomponent", MyWebComponent);
                         }
-                    </code></pre>
-                    <b>Pour utiliser le web composant, il suffit d'ajouter le nouveau tag html</b>
-                    <pre><code data-trim>
-                        <my-new-webcomponent></my-new-webcomponent>
-                    </code></pre>
+                    </code></pre>                    
                 </section>
                 <section>
-                    <h2>Le shadow Dom</h2>
-                    <p>Le shadow Dom permet d'encapsuler le JavaScript et le CSS des éléments HTML créés</p>
+                    <h3>Le shadow Dom</h3>
+                    <p>Le shadow Dom permet d'encapsuler le JavaScript et le CSS des éléments HTML créés <br/>
+                        La page HTML ne peut pas intéragir avec le composant "shadow" => il est protégé 👍
+                    </p>                    
+                </section>
+                <section>
                     <img src="img/shadow-dom.png">
                 </section>
                 <section>
                     <h3>Shadow dom</h3>
                     <ul>
-                        <li>Permet d'éviter les interférences entre les fichiers JavaScript</li>
-                        <li>Permet donc d'utiliser plusieurs frameworks (ou version de framework) au sein de la même application</li>
-                        <li>Permet d'éviter que les styles des un écrasent le style des autres</li>
+                        <li>Permet d'éviter les interférences entre les fichiers JavaScript 👍</li>
+                        <li>Permet donc d'utiliser plusieurs frameworks (ou version de framework) au sein de la même application 👍</li>
+                        <li>Permet d'éviter que les styles des un écrasent le style des autres 👍</li>
                     </ul>
                 </section>
                 <section>
                     <h2>Communications :  The Dom is the API</h2>
                     <ul>
                         <li>via l'url</li>
-                        <li>via les attributs (cf: démo)</li>
+                        <li>via les attributs html</li>
+                        <pre><code data-trim>
+                            <my-webcomponent data="new data"></my-webcomponent>
+                        </code></pre>
                         <li>via les évnènements javascript: utilisation de l'API <i>CustomEvent</i></li>
                     </ul>
                     <pre><code data-trim>
